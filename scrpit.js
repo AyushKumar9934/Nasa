@@ -74,7 +74,8 @@ function addSearchToHistory() {
     ulList.appendChild(listItem);
   });
 }
-function handleClick() {
+function handleClick(e) {
+    e.preventDefault();
   let calInput = document.getElementById("search-input");
   console.log("callinput is ", typeof calInput.value);
   if (calInput.value.length>0) {
@@ -83,4 +84,4 @@ function handleClick() {
   }
 }
 
-document.getElementById("submit").addEventListener("click", handleClick);
+document.getElementById("submit").addEventListener("click", (e)=>handleClick(e));
